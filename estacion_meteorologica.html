@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Consulta datos meteorológicos, visualiza estaciones y eventos con OrionX.">
+        <title>Club OrionX - Estacion Meteorologica</title>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            crossorigin="">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/hero-slider.css"> 
+        <link rel="stylesheet" href="styles/tooplate-style.css"> 
+        <link rel="stylesheet" href="styles/style_pagina_mapas.css" />
+
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    </head>
+
+    <body>
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#293542] px-10 py-3 bg-[#14191f] dark group/design-root relative  overflow-x-hidden">
+            <div class="flex items-center gap-4 text-white">
+                <a class="text-white text-lg font-bold leading-tight tracking-[-0.015em]" href='index.html'>OrionX</a>
+            </div>
+            <div class="flex flex-1 justify-end gap-8">
+                <div class="flex items-center gap-9">
+                    <a class="text-white text-sm font-medium leading-normal" href='index.html'>Universo</a>
+                    <a class="text-white text-sm font-medium leading-normal" href="#">Eventos</a>
+                    <a class="text-white text-sm font-medium leading-normal" href="estacion_meteorologica.html">Mapas</a>
+                </div>
+                <div class="flex gap-2">
+                    <button
+                        class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#293542] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+                        <div class="text-white" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z">
+                                </path>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <!--<div class="header">
+            <nav class="navbar navbar-expand-lg navbar-dark" role="navigation">
+                <div class="container-fluid">
+                    <a class="logo" href="index.html">OrionX</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div id="main-nav" class="collapse navbar-collapse">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a href="#" class="nav-top">Inicio</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link" data-id="about">Nosotros</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link" data-id="portfolio">Portfolio</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link" data-id="blog">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div> -->
+
+        <div class="contenedor">
+            <div class="izquierda">
+                <!-- Barra de busqueda -->
+                <div class="search-div">
+                    <input type="text" id="locationInput" placeholder="Buscar localidad..." />
+                    <button id="searchBtn">Buscar</button>
+                </div>
+                <!-- Mapa Leaflet -->
+                <div class="map-div">
+                    <div id="map-leaflet"></div>
+                </div>
+
+                <!-- Selector de Overlay -->
+                <div id="portafolio" class="seccion-pagina">
+                    <div class="seccion-encabezado ">
+                        <h4>VISTAS</h4>
+                        <div class="line-dec"></div>
+                    </div>
+                    <div class="categorias-seccion">
+                        <ul id="overlayList" class="overlay-list">
+                            <li data-overlay="wind">💨 Viento</li>
+                            <li data-overlay="temp">🌡️ Temperatura</li>
+                            <li data-overlay="pressure">🧭 Presión</li>
+                            <li data-overlay="rain">🌧️ Lluvia</li>
+                            <li data-overlay="clouds">☁️ Nubes</li>
+                            <li data-overlay="clouds-top">☁️ Nubes altas</li>
+                            <li data-overlay="clouds-mid">☁️ Nubes medias</li>
+                            <li data-overlay="clouds-bottom">☁️ Nubes bajas</li>
+                            <li data-overlay="fog">🌫️ Neblina</li>
+                            <li data-overlay="ceiling">🌅 Cielo despejado</li>
+                            <li data-overlay="dust">🔥 Polvo</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mapa Windy -->
+                <div class="map-div">
+                    <iframe src="windy_map.html" id="map-windy">
+                    </iframe>
+                </div>
+
+            </div>
+            <div class="derecha">
+
+                <!-- Dato Recuperados de Visual Crossing -->
+                <div class="weather-panel-hora-actual">
+                    <h2>🌍 <span id="ubicacion_nombre">Ubicación</span></h2>
+                    <p class="weather-meta">
+                        📅 <strong><span id="fecha_actual">Día Actual</span></strong> a las <strong><span id="hora_actual">--:--</span></strong>
+                    </p>
+
+                    <div class="weather-details">
+                        <div><strong>🌐 Latitud:</strong> <span id="latitud">--</span></div>
+                        <div><strong>🌐 Longitud:</strong> <span id="longitud">--</span></div>
+                        <div><strong>🕓 Zona horaria:</strong> <span id="zona_horaria">--</span></div>
+
+                        <h3>🌤️ Condiciones actuales - Hora <span id="hora_actual">--:--</span></h3>
+                        <div><strong>🌥️ Condiciones:</strong> <span id="condiciones">--</span></div>
+                        <div><strong>🌡️ Temperatura:</strong> <span id="temperatura">--</span> °C</div>
+                        <div><strong>🥶 Sensación Térmica:</strong> <span id="sensacion">--</span> °C</div>
+                        <div><strong>💧 Humedad:</strong> <span id="humedad">--</span> %</div>
+                        <div><strong>💨 Viento:</strong> <span id="viento">--</span> km/h</div>
+                        <div><strong>☁️ Nubosidad:</strong> <span id="nubosidad">--</span> %</div>
+                        <div><strong>🔎 Visibilidad:</strong> <span id="visibilidad">--</span> km</div>
+                        <div><strong>📈 Presión:</strong> <span id="presion">--</span> hPa</div>
+                        <div><strong>🔆 UV:</strong> <span id="uv">--</span></div>
+                        <div><strong>🌅 Amanecer:</strong> <span id="amanecer">--</span></div>
+                        <div><strong>🌇 Anochecer:</strong> <span id="anochecer">--</span></div>
+                        <div><strong>🌙 Fase lunar:</strong> <span id="fase_lunar">--</span></div>
+                    </div>
+                </div>
+
+                <!-- Dato Arduino -->
+                <pre id="datosArduino"></pre>
+                <div class="weather-panel-hora-actual">
+                    <h2>📡 Datos Estación Meteorológica Arduino</h2>
+                    <p class="weather-meta">
+                        🗺️ <strong>Ubicación:</strong> Malchinguí<br>
+                        <strong>Estado de la Estación:</strong>
+                        <label id="estado_broker">--</label>
+                    </p>
+                    <div class="weather-details">
+                        <div><strong>📅 Fecha:</strong> <span id="fecha_arduino">--</span></div>
+                        <div><strong>🕓 Hora:</strong> <span id="hora_arduino">--</span></div>
+                        <div><strong>🌡️ Temperatura:</strong> <span id="temp_arduino">--</span> °C</div>
+                        <div><strong>💧 Humedad:</strong> <span id="hum_arduino">--</span> %</div>
+                        <div><strong>💡 Luz:</strong> <span id="luz_arduino">--</span></div>
+                        <div><strong>🌧️ Lluvia:</strong> <span id="lluvia_arduino">--</span></div>
+                        <div><strong>📈 Presión:</strong> <span id="presion_arduino">--</span> hPa</div>
+                        <div><strong>💨 Viento:</strong> <span id="viento_arduino">--</span> km/h</div>
+                        <div><strong>🌬️ Calidad del Aire:</strong> <span id="aire_arduino">--</span> %</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Selector de tablas -->
+        <div id="portafolio" class="seccion-pagina">
+            <div class="seccion-encabezado">
+                <h4>TABLAS</h4>
+                <div class="line-dec"></div>
+            </div>
+            <div class="categorias-seccion">
+                <ul id="tablaSelector" class="tabla-selector">
+                    <li data-tabla="condicionesActuales">🌤️ Condiciones actuales</li>
+                    <li data-tabla="dia">📅 Día</li>
+                    <li data-tabla="horas">🕒 Horas</li>
+                    <li data-tabla="estaciones">🏫 Estaciones</li>
+                    <li data-tabla="recomendaciones">📝 Recomendaciones</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Contenedores donde se insertarán las tablas -->
+        <div id="weather-table" class="tabla-contenedor"></div>
+        <div id="weather-horizontal-table_days" class="tabla-contenedor"></div>
+        <div id="weather-horizontal-table_hours" class="tabla-contenedor"></div>
+        <div id="stations-table" class="tabla-contenedor"></div>
+        <div id="recomendaciones-txt" class="tabla-contenedor"></div>
+
+        <div id="about" class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading text-center">
+                        <h4>ACTIVIDADES</h4>
+                        <div class="line-dec mx-auto"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="service-item first-service">
+                        <div class="icon"></div>
+                        <h4>OBJETIVOS</h4>
+                        <p>Meteor is free HTM. this layout for your project.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="service-item second-service">
+                        <div class="icon"></div>
+                        <div class="icon"><i class="fas fa-star fa-3x text-info"></i></div>
+                        <h4>MAPA ESTELAR</h4>
+                        <p>Visualiza constelaciones y planetas visibles según tu ubicación.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="service-item third-service" onclick="window.location.href='#'">
+                        <div class="icon"></div>
+                        <div class="icon"><i class="fas fa-meteor fa-3x text-primary"></i></div>
+                        <h4>ESTACIÓN METEOROLOGICA</h4>
+                        <p>Consulta datos climáticos en tiempo real desde nuestra estación.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="service-item fourth-service" onclick="window.location.href='chat_bot.html'">
+                        <div class="icon"></div>
+                        <div class="icon"><i class="fas fa-cloud-sun fa-3x text-success"></i></div>
+                        <h4>CHAT BOT</h4>
+                        <p>Conoce las recomendaciones que tenemos para tí, fechas clave para ver astros,
+                            eclipses y condiciones climaticas.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="service-item five-service">
+                        <div class="icon"></div>
+                        <div class="icon"><i class="fas fa-cloud-sun fa-3x text-success"></i></div>
+                        <h4>PROXIMOS EVENTOS DEL CLUB</h4>
+                        <p>Consulta datos climáticos en tiempo real desde nuestra estación.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- CONTENEDORES QUE MUESTRAN DATOS JSON - ELIMNAR -->
+        <section>
+            <h2>📦 Datos Nominatim</h2>
+            <pre id="json-output" class="json-container"></pre>
+        </section>
+        <section>
+            <h2>📦 Datos VISUAL CROSSING</h2>
+            <pre id="visualCrossingt" class="json-container"></pre>
+        </section>
+        <section>
+            <h2>📦 Datos ARDUINO</h2>
+            <pre id="DataArduino" class="json-container" ></pre>
+        </section> 
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="copyright-text">
+                            <p>Copyright &copy; 2025 OrionX. 
+                            
+                            - Design: <a href="http://www.tooplate.com/view/2089-meteor" target="_parent">Meteor</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="social-icons">
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-rss"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <script type="text/javascript">
+        $(document).ready(function() {
+            // navigation click actions 
+            $('.scroll-link').on('click', function(event){
+                event.preventDefault();
+                var sectionID = $(this).attr("data-id");
+                scrollToID('#' + sectionID, 750);
+            });
+            // scroll to top action
+            $('.scroll-top').on('click', function(event) {
+                event.preventDefault();
+                $('html, body').animate({scrollTop:0}, 'slow');         
+            });
+            // mobile nav toggle
+            $('#nav-toggle').on('click', function (event) {
+                event.preventDefault();
+                $('#main-nav').toggleClass("open");
+            });
+        });
+        // scroll function
+        function scrollToID(id, speed){
+            var offSet = 50;
+            var targetOffset = $(id).offset().top - offSet; 
+            var mainNav = $('#main-nav');
+            $('html,body').animate({scrollTop:targetOffset}, speed);
+            if (mainNav.hasClass("open")) {
+                mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+                mainNav.removeClass("open");
+            }
+        }
+        if (typeof console === "undefined") {
+            console = {
+                log: function() { }
+            };
+        }
+        </script>    
+
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+        <script type="module" src="js/map_controller.js"></script>
+        <script src="https://unpkg.com/paho-mqtt@1.1.0/paho-mqtt-min.js"></script>
+        <script type="module" src="js/datos_arduino.js"></script>
+        
+    </body>
+</html>
