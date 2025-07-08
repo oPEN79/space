@@ -1,0 +1,355 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-gray-50 group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e9edf1] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#101419]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="text-[#101419] text-lg font-bold leading-tight tracking-[-0.015em]">Cosmos Events</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#101419] text-sm font-medium leading-normal" href="#">Home</a>
+              <a class="text-[#101419] text-sm font-medium leading-normal" href="#">Events</a>
+              <a class="text-[#101419] text-sm font-medium leading-normal" href="#">Resources</a>
+              <a class="text-[#101419] text-sm font-medium leading-normal" href="#">Community</a>
+            </div>
+            <div class="flex gap-2">
+              <button
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#e9edf1] text-[#101419] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+              >
+                <div class="text-[#101419]" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+              <button
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#e9edf1] text-[#101419] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+              >
+                <div class="text-[#101419]" data-icon="User" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDZsUkqvcs_VFFva7L3PH2dmmaohevR5DAyqD5ILHq3Zqv8rThNt0aRtk_-uwux__2clogVsDYlzBqAAiTKyb-Ijyu5bGQftQL-cnfq63y6CK4G-h1obMpFNi2FESRPes7UQD4AfOAa1dvHOK47U6GOIdcitzz6hOR0h0gRrlEAGv8ChYbunVYxNskn7hqwxz9S8f7t9zXRFjGA4jO0dwFvrFCj-6Aq5yUIhHuAiABQyVMFxYTe8X0_vW88l391AssrFFsYFMNWO9w");'
+            ></div>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="@container">
+              <div class="@[480px]:px-4 @[480px]:py-3">
+                <div
+                  class="bg-cover bg-center flex flex-col justify-end overflow-hidden bg-gray-50 @[480px]:rounded-xl min-h-[218px]"
+                  style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 25%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD3DwRFkqjRH_OIwQC0kZ21QcrrEvbVtLV-A44OctE3AJg6bE4xcB4U7xgVE-SZGQIbe9P83laY9KZqk-54tr8xsHnKcJV0HcXc_ig8Uf5ny7j0c6sr5Gc8XG-RAp0ePU0WAD4Xaj-cWy5k7KZLzo_jgGGJjRL4rUBfeQE9giyJ1k_O5Vs5tBxHw5ApHNjKyKsJE9WzD0p4u8mkmP2kBLKmqmmOK8ZJe9qnwfO_UVx-5DCW_ku0yk0upIR6p7RTnKEePfo7kAKdBTs");'
+                >
+                  <div class="flex p-4"><p class="text-white tracking-light text-[28px] font-bold leading-tight">Calendario Astronómico</p></div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap items-center justify-center gap-6 p-4">
+              <div class="flex min-w-72 max-w-[336px] flex-1 flex-col gap-0.5">
+                <div class="flex items-center p-1 justify-between">
+                  <button>
+                    <div class="text-[#101419] flex size-10 items-center justify-center" data-icon="CaretLeft" data-size="18px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path>
+                      </svg>
+                    </div>
+                  </button>
+                  <p class="text-[#101419] text-base font-bold leading-tight flex-1 text-center pr-10">Julio 2025</p>
+                </div>
+                <div class="grid grid-cols-7">
+                  <p class="text-[#101419] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">L</p>
+                  <p class="text-[#101419] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">M</p>
+                  <p class="text-[#101419] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">M</p>
+                  <p class="text-[#101419] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">J</p>
+                  <p class="text-[#101419] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">V</p>
+                  <p class="text-[#101419] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">S</p>
+                  <p class="text-[#101419] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">D</p>
+                  <button class="h-12 w-full text-[#101419] col-start-4 text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">1</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">2</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">3</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">4</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full bg-[#5b98d6]">5</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">6</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">7</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">8</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">9</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">10</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">11</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">12</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">13</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">14</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">15</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">16</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">17</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">18</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">19</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">20</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">21</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">22</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">23</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">24</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">25</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">26</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">27</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">28</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">29</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">30</div>
+                  </button>
+                </div>
+              </div>
+              <div class="flex min-w-72 max-w-[336px] flex-1 flex-col gap-0.5">
+                <div class="flex items-center p-1 justify-between">
+                  <p class="text-[#101419] text-base font-bold leading-tight flex-1 text-center pl-10">Agosto 2025</p>
+                  <button>
+                    <div class="text-[#101419] flex size-10 items-center justify-center" data-icon="CaretRight" data-size="18px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+                <div class="grid grid-cols-7">
+                  <p class="text-[#101419] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">L</p>
+                  <p class="text-[#101419] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">M</p>
+                  <p class="text-[#101419] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">M</p>
+                  <p class="text-[#101419] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">J</p>
+                  <p class="text-[#101419] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">V</p>
+                  <p class="text-[#101419] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">S</p>
+                  <p class="text-[#101419] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">D</p>
+                  <button class="h-12 w-full text-[#101419] col-start-4 text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">1</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">2</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">3</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">4</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">5</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">6</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">7</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">8</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">9</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">10</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">11</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">12</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">13</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">14</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">15</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">16</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">17</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">18</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">19</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">20</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">21</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">22</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">23</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">24</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">25</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">26</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">27</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">28</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">29</div>
+                  </button>
+                  <button class="h-12 w-full text-[#101419] text-sm font-medium leading-normal">
+                    <div class="flex size-full items-center justify-center rounded-full">30</div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <h2 class="text-[#101419] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Proximos eventos</h2>
+            <div class="p-4">
+              <div class="flex items-stretch justify-between gap-4 rounded-xl">
+                <div class="flex flex-col gap-1 flex-[2_2_0px]">
+                  <p class="text-[#57738e] text-sm font-normal leading-normal">Julio 15, 2025</p>
+                  <p class="text-[#101419] text-base font-bold leading-tight">Lluvia de meteoros</p>
+                  <p class="text-[#57738e] text-sm font-normal leading-normal">Observa la lluvia de meteoros anual, que se ve mejor desde lugares oscuros lejos de las luces de la ciudad.</p>
+                </div>
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDIQHWstJCeUPEB6rfMjhMDHVtFkbnaeA4USWY7ZxcjCdUhhSFojN3wGedlA1CEhsxblhNv3tjOJFzjJXP7W3nZKkXPtJXaCqByKuJ4pw6H1-rQaLTy3-RB6rLjOkxmBzlnwgOrvVLv3hz6f4WLTXRFkW1M98Igf5IlVysscPnQahoXpaHnT-FX9uvugQKPY-mfPtiqEqQsVL-hRo3xvG-IkbgWPUpIp8VSsavjuAXmJtkNZhZ_w-x5mGStfiHjM03CaBQ5GM8QRPQ");'
+                ></div>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-stretch justify-between gap-4 rounded-xl">
+                <div class="flex flex-col gap-1 flex-[2_2_0px]">
+                  <p class="text-[#57738e] text-sm font-normal leading-normal">Agosto 12, 2025</p>
+                  <p class="text-[#101419] text-base font-bold leading-tight">Eclipse Lunar</p>
+                  <p class="text-[#57738e] text-sm font-normal leading-normal">
+                    Un eclipse lunar parcial será visible en las primeras horas de la mañana. Verifique los horarios locales para la mejor visualización.
+                  </p>
+                </div>
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbQ3jh3sL7g5aD2fiszekdnrxf1h7LT87FrKRaubq_bOBLhH9w2tGnsforCru_itXHCDCMDqJTqB209A0qampKinClTCELt8LShwNUuvL5cSe-JJmkybwfJbMUHCKgjST75uO5yObCJ2YyxhdwIJhROxZFcGqtqNxKrk3CDKdgDoM16WaKhc8cMT40V3VIS3ndc5A06K562F10QpnjDWwSM40T9ZjAs3iK2xcH_Gnlkx3Ks5kuULPjMyVJu07jeQOZu0mFiSw1GFQ");'
+                ></div>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-stretch justify-between gap-4 rounded-xl">
+                <div class="flex flex-col gap-1 flex-[2_2_0px]">
+                  <p class="text-[#57738e] text-sm font-normal leading-normal">Agosto 28, 2025</p>
+                  <p class="text-[#101419] text-base font-bold leading-tight">Conjunción Planetaria</p>
+                  <p class="text-[#57738e] text-sm font-normal leading-normal">
+                    Venus y Júpiter aparecerán cerca el uno del otro en el cielo de la tarde, creando un impresionante espectáculo visual.
+                  </p>
+                </div>
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDfthYOJniPCttSASKdCRqJtLO6wQ8cebAd1Lw_g213AvxlMk0a2DSNOqGXfDLMTOxFNAIN6psPdOjnZ2obfBPH7zwEsr8B7idGERLRQkc4GOf_nYnEEuf8cotmjbZ8bi05Ou6mHFXgvitGiZ4jetGptjrAmxJkdBSyLiZoFaMGdRgWu9aBa4VRsvZRMiu3s0_rJ3TKYMvjQBmuPBrWNxSOesTwf4PuCcS2Zyj8ko_pZhz4LMLCYfQSBDyaW6NBivowCHhC72PRlaI");'
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
