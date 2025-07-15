@@ -1,13 +1,10 @@
 /* -------------------------------- 
-
 Primary style
-
 -------------------------------- */
 *, *::after, *::before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  
 }
 
 html {
@@ -16,12 +13,12 @@ html {
 
 body {
   font-family: "Open Sans", sans-serif;
-  color: #2c343b;
-  background-color: #f2f2f2;
+  color: #FFFFFF; /* Cambiado a tu color de texto principal: #FFFFFF */
+  background-color: #0A0A0A; /* Cambiado a tu color de fondo del cuerpo: #0A0A0A */
 }
 
 a {
-  color: #d44457;
+  color: #DDDDDD; /* Cambiado a tu color para enlaces de navegación: #DDDDDD */
   text-decoration: none;
 }
 
@@ -30,9 +27,7 @@ img {
 }
 
 /* -------------------------------- 
-
 Main Components 
-
 -------------------------------- */
 .cd-header {
   position: absolute;
@@ -41,7 +36,7 @@ Main Components
   left: 0;
   width: 100%;
   height: 50px;
-  background-color: #21272c;
+  background-color: #1A1A2E; /* Cambiado a tu color de fondo de la cabecera: #1A1A2E */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -96,9 +91,9 @@ Main Components
   height: 50px;
   line-height: 50px;
   padding-left: 5%;
-  background: #21272c;
-  border-top: 1px solid #333c44;
-  color: #ffffff;
+  background: #1A1A2E; /* Cambiado para que coincida con el fondo de cabecera en móvil */
+  border-top: 1px solid #333c44; /* Mantengo este borde, ya que no se especificó un cambio */
+  color: #DDDDDD; /* Cambiado a tu color para enlaces de navegación: #DDDDDD */
 }
 @media only screen and (min-width: 768px) {
   .cd-primary-nav {
@@ -140,9 +135,7 @@ Main Components
 }
 
 /* -------------------------------- 
-
 Slider
-
 -------------------------------- */
 .cd-hero {
   position: relative;
@@ -202,9 +195,7 @@ Slider
 }
 
 /* -------------------------------- 
-
 Single slide style
-
 -------------------------------- */
 .cd-hero-slider li {
   background-position: center center;
@@ -289,7 +280,7 @@ Single slide style
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   line-height: 1.2;
   margin: 0 auto 14px;
-  color: #ffffff;
+  color: #FFFFFF; /* Cambiado a tu color de texto principal: #FFFFFF */
   width: 90%;
   max-width: 400px;
 }
@@ -304,11 +295,11 @@ Single slide style
   display: inline-block;
   padding: 1.2em 1.4em;
   margin-top: .8em;
-  background-color: rgba(212, 68, 87, 0.9);
+  background-color: #5A4A69; /* Cambiado a tu color de botón: #5A4A69 */
   font-size: 1.3rem;
   font-weight: 700;
   letter-spacing: 1px;
-  color: #ffffff;
+  color: #FFFFFF; /* Mantenemos blanco para que contraste con el botón */
   text-transform: uppercase;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   -webkit-transition: background-color 0.2s;
@@ -316,16 +307,16 @@ Single slide style
   transition: background-color 0.2s;
 }
 .cd-hero-slider .cd-btn.secondary {
-  background-color: rgba(22, 26, 30, 0.8);
+  background-color: rgba(90, 74, 105, 0.8); /* Versión un poco transparente de tu color de botón para el secundario */
 }
 .cd-hero-slider .cd-btn:nth-of-type(2) {
   margin-left: 1em;
 }
 .no-touch .cd-hero-slider .cd-btn:hover {
-  background-color: #d44457;
+  background-color: #6C5D7B; /* Un color de hover ligeramente más claro para el botón principal */
 }
 .no-touch .cd-hero-slider .cd-btn.secondary:hover {
-  background-color: #161a1e;
+  background-color: #4C3C58; /* Un color de hover ligeramente más oscuro para el botón secundario */
 }
 @media only screen and (min-width: 768px) {
   .cd-hero-slider .cd-full-width,
@@ -376,9 +367,7 @@ Single slide style
 }
 
 /* -------------------------------- 
-
 Single slide animation
-
 -------------------------------- */
 @media only screen and (min-width: 768px) {
   .cd-hero-slider .cd-half-width {
@@ -483,9 +472,7 @@ Single slide animation
   }
 }
 /* -------------------------------- 
-
 Slider navigation
-
 -------------------------------- */
 .cd-slider-nav {
   display: none;
@@ -495,7 +482,7 @@ Slider navigation
   z-index: 2;
   text-align: center;
   height: 55px;
-  background-color: rgba(0, 1, 1, 0.5);
+  background-color: rgba(0, 1, 1, 0.5); /* Mantenemos el RGBA para la transparencia si no se especifica */
 }
 .cd-slider-nav nav, .cd-slider-nav ul, .cd-slider-nav li, .cd-slider-nav a {
   height: 100%;
@@ -510,8 +497,8 @@ Slider navigation
   left: 0;
   width: 60px;
   height: 100%;
-  color: #d44457;
-  background-color: #ffffff;
+  color: #DDDDDD; /* Usamos el color de enlace para el marcador */
+  background-color: #FFFFFF; /* Mantenemos blanco para el marcador si no se especifica */
   box-shadow: inset 0 2px 0 currentColor;
   -webkit-transition: -webkit-transform 0.2s, box-shadow 0.2s;
   -moz-transition: -moz-transform 0.2s, box-shadow 0.2s;
@@ -556,7 +543,7 @@ Slider navigation
   float: left;
 }
 .cd-slider-nav li.selected a {
-  color: #2c343b;
+  color: #0A0A0A; /* Usamos el color del fondo del cuerpo para el texto seleccionado para contraste */
 }
 .no-touch .cd-slider-nav li.selected a:hover {
   background-color: transparent;
@@ -567,7 +554,7 @@ Slider navigation
   padding-top: 35px;
   font-size: 1rem;
   font-weight: 700;
-  color: #a8b4be;
+  color: #DDDDDD; /* Cambiado a tu color para enlaces de navegación: #DDDDDD */
   -webkit-transition: background-color 0.2s;
   -moz-transition: background-color 0.2s;
   transition: background-color 0.2s;
@@ -587,7 +574,7 @@ Slider navigation
   transform: translateX(-50%);
 }
 .no-touch .cd-slider-nav a:hover {
-  background-color: rgba(0, 1, 1, 0.5);
+  background-color: rgba(10, 10, 10, 0.5); /* Usamos una versión transparente del color de fondo del cuerpo para el hover */
 }
 .cd-slider-nav li:first-of-type a::before {
   background-position: 0 0;
@@ -638,9 +625,7 @@ Slider navigation
 }
 
 /* -------------------------------- 
-
 Main content
-
 -------------------------------- */
 .cd-main-content {
   width: 90%;
@@ -651,7 +636,7 @@ Main content
 .cd-main-content p {
   font-size: 1.4rem;
   line-height: 1.8;
-  color: #999999;
+  color: #FFFFFF; /* Cambiado a tu color de texto principal: #FFFFFF */
   margin: 2em 0;
 }
 @media only screen and (min-width: 1170px) {
@@ -664,9 +649,7 @@ Main content
 }
 
 /* -------------------------------- 
-
 Javascript disabled
-
 -------------------------------- */
 .no-js .cd-hero-slider li {
   display: none;
